@@ -1,46 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import { calendarIcon, classesIcon, examIcon, recommandationIcon, staticsIcon } from './icons'
+import { motion } from 'framer-motion';
+import { PagesElement } from '../home';
+
 //logo from public
 
-interface PagesElement {
-    title: string;
-    Icon: React.FC<{ fill: string }>; // Update the type to accept an `fill` prop
+type props = {
+    isSideBarOpen: boolean,
+    pagesElement: PagesElement[],
+    activePage: PagesElement,
+    setActivePage: React.Dispatch<React.SetStateAction<PagesElement>>
+
 }
 
-const SideBar = () => {
+const SideBar = ({ isSideBarOpen, pagesElement, activePage, setActivePage }: props) => {
 
     // classes, exam module, Statics, Recommandation, Calendar
-    const pagesElement = [
-        {
-            title: 'Classes',
-            Icon: classesIcon,
-        },
-        {
-            title: 'Exam Module',
-            Icon: examIcon,
-        },
-        {
-            title: 'Statics',
-            Icon: staticsIcon,
-        },
-        {
-            title: 'Recommandation',
-            Icon: recommandationIcon,
-        },
-        {
-            title: 'Calendar',
-            Icon: calendarIcon,
-        }
-    ] as PagesElement[];
-
-    const [activePage, setActivePage] = useState<PagesElement>(pagesElement[0])
-
     return (
-        <div className="w-64 h-screen bg-customColors-lightBg pl-8 ">
+        <motion.div className="w-64 h-full bg-customColors-lightBg pl-8 relative border-[80_82_84_0.25] border border-solid"
+            animate={{
+                width: isSideBarOpen ? 270 : 0,
+                scaleX: isSideBarOpen ? 1 : 0,
+                opacity: isSideBarOpen ? 1 : 0,
+                originX: 0,
+                transition: {
+                    duration: 0.5,
 
+                },
 
+            }}
 
+        >
 
             {/* logo */}
             <div className="flex flex-col justify-start">
@@ -66,7 +56,7 @@ const SideBar = () => {
                 <div className="flex flex-col gap-7 mt-9">
 
                     {pagesElement.map((Element) => (
-                        <button key={Element.title} className="flex flex-row gap-3  text-primary-600"
+                        <button key={"page-" + Element.title} className="flex flex-row gap-3  text-primary-600"
                             onClick={() =>
                                 setActivePage(Element)}
                         >
@@ -109,7 +99,7 @@ const SideBar = () => {
 
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 
