@@ -18,8 +18,8 @@
   "editor.formatOnSave": true,
   // Extension: ESLint
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false,
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "eslint.validate": [
     "javascript",
@@ -33,5 +33,8 @@
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "yaml.schemas": {
     "https://www.artillery.io/schema.json": []
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
 }
