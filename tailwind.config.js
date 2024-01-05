@@ -20,6 +20,7 @@ module.exports = {
       white: '#FFFFFF',
       black: '#000',
       dark: '#1D2144',
+      orangeText: '#FF7B5D',
 
       customColors: {
         dark: '#eaeaff',
@@ -29,7 +30,9 @@ module.exports = {
           light: '#000000'
         },
         darkBg: '#282A42',
-        lightBg: '#F7F7F9'
+        lightBg: '#F7F7F9',
+        orangeBg: '#FFF5EB',
+
       },
       common: {
         black: '#000',
