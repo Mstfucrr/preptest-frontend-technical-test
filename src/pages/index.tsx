@@ -4,7 +4,6 @@ const Home: NextPage = () => {
   return (
     <div className='flex flex-col items-center justify-center'>
       <h1 className='m-3 font-bold text-3xl'>PREPTEST FRONTEND TECHNICAL TEST</h1>
-
       {/* Use this figma link */}
       <div className='flex flex-row items-center justify-center'>
         <img alt='figma-icon' src='https://www.vectorlogo.zone/logos/figma/figma-icon.svg' width='30' height='30' />
@@ -18,6 +17,11 @@ const Home: NextPage = () => {
         </a>
       </div>
 
+      <div className='m-3 font-bold text-3xl'>
+        {'For My Project :'}
+        <a href='/home' className='m-3 font-bold text-3xl text-blue-500'>
+          /home
+        </a> </div>
       {/* PLEASE README ALERT TEXT */}
 
       <a
