@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion';
-import { classesIcon, examIcon, staticsIcon, recommandationIcon, calendarIcon } from './icons';
+import { classesIcon, examIcon, staticsIcon, recommandationIcon, calendarIcon } from './icons/icons';
 import { PagesElement } from 'src/types/types';
 
 //logo from public

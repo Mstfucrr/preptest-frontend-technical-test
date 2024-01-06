@@ -2,7 +2,7 @@
 
 import React from 'react'
 import SideBar from '../sideBar'
-import TopBar from '../topBar'
+import TopBar from '../topBar/topBar'
 import { FaChevronLeft } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
