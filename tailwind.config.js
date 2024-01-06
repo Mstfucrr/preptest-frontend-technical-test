@@ -237,6 +237,11 @@ module.exports = {
       locationSwitch: 'transofrm 2s ease'
     },
     extend: {
+      backgroundImage: {
+        OverallLayout: 'url(/images/statistic/OverallLayout.png)',
+        OverallSuccessLayout : 'url(/images/statistic/OverallSuccessLayout.png)',
+        GeneralLevelLayout : 'url(/images/statistic/GeneralLevelLayout.png)',   
+      },
       animation: {
         /**
          * Text animation at 3s from left to right
