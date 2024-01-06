@@ -6,7 +6,6 @@ import TopBar from '../topBar'
 import StatisticCard from '../statisticCard'
 import TestCardComponent from '../testCard'
 import TestTitle from '../testTitle'
-import dynamic from 'next/dynamic';
 import { TestCard } from 'src/types/types'
 
 
@@ -64,13 +63,11 @@ const HomeComponent = () => {
         }
     ]
 
-    const MotionLink = dynamic(() => import('framer-motion').then((mod) => mod.motion.a), { ssr: false });
-
 
     return (
-        <div className="lg:w-4/5 xl:w-3/5 w-full mx-auto flex lg:flex-row items-start h-screen">
+        <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-screen">
             <div className="flex relative w-auto min-h-screen">
-                <div className="lg:flex hidden">
+                <div className="lg:relative absolute lg:top-0 lg:left-0 w-full h-screen z-50">
                     <SideBar />
                 </div>
             </div>
@@ -109,46 +106,51 @@ const HomeComponent = () => {
                 {/* content */}
                 <div className="flex flex-row flex-wrap gap-y-4 mt-7">
                     {/* notes card */}
-                    <MotionLink className='flex w-full xl:w-2/3 sm:min-w-[35rem] max-h-72 flex-col justify-around items-center p-6 
+                    <div className="flex w-full xl:w-2/3 sm:min-w-[35rem] max-h-72 flex-col justify-around items-center p-6 
                     rounded-xl bg-gradient-to-b from-customColors-orangeBg via-transparent to-[rgba(255,123,93,0.40)]
-                    hover:shadow-lg transition duration-300 ease-in-out relative '
-                        href='/notes'
-                    >
+                    hover:shadow-lg transition duration-300 ease-in-out relative">
 
-                        {/* title */}
-                        <p className="text-orangeText uppercase text-2xl font-medium">Notes: Data Analysis</p>
-                        {/* card content */}
-                        <div className="flex flex-row w-full px-6 gap-6 h-full">
+                        <a href='/notes'>
 
-                            <div className="flex gap-3">
-                                <div className="bg-[#FFBCAD] w-32 h-44 flex items-center justify-center rounded-3xl">
-                                    <Image src="/images/dataAnalysis.png" width={"100%"} height={"100%"} />
+                            {/* title */}
+                            <p className="text-orangeText uppercase text-2xl font-medium text-center">Notes: Data Analysis</p>
+                            {/* card content */}
+                            <div className="flex flex-row w-full px-6 gap-6 h-full">
+
+                                <div className="flex gap-3">
+                                    <div className="bg-[#FFBCAD] w-auto h-auto md:w-32 md:h-44 flex items-center justify-center rounded-3xl">
+                                        <Image src="/images/dataAnalysis.png" width={"100%"} height={"100%"} />
+                                    </div>
                                 </div>
+
+                                <p className="text-left text-[#262626] text-lg font-normal poppins w-full h-full overflow-y-hidden"
+
+                                >
+
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptas.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quis autem molestiae iste sint nemo maxime, labore error quod eligendi praesentium beatae aperiam vel architecto quae fugiat adipisci. Ea, dicta.
+                                </p>
                             </div>
 
-                            <p className="text-left text-[#262626] text-lg font-normal poppins w-full h-full overflow-hidden">
+                            {/* read more */}
+                            <div className="absolute w-full h-14 bottom-0 bg-customColors-orangeBg blur-2xl" />
+                            {/* button */}
 
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptas.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quis autem molestiae iste sint nemo maxime, labore error quod eligendi praesentium beatae aperiam vel architecto quae fugiat adipisci. Ea, dicta.
-                            </p>
-                        </div>
-
-                        {/* read more */}
-                        <div className="absolute w-full h-14 bottom-0 bg-customColors-orangeBg blur-2xl" />
-                        {/* button */}
-
+                        </a>
 
                         <motion.a
                             className='flex justify-center items-center gap-3 py-2 px-6 mb-4 bg-orangeText rounded-full absolute bottom-0'
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 1 }}
-                            href='/notes'>
+                            transition={{ duration: 0.2 }}
+                            href='/notes'
+                        >
                             <p className="text-customColors-lightBg font-medium">Read More</p>
                             <Image src="/icons/arrow-bottom.svg" width={17} height={17} />
 
                         </motion.a>
-                    </MotionLink>
+                    </div>
 
                     {/* statistic card */}
                     <StatisticCard />
@@ -158,7 +160,7 @@ const HomeComponent = () => {
                     {/* Data Analysis cars 1-2 */}
                     <div className="w-full grid grid-rows-1 lg:grid-cols-2 grid-cols-1 gap-7">
                         {testCards.map((testCard) => (
-                            <TestCardComponent testCard={testCard} key={"testcard-" + testCard.id} />
+                            <TestCardComponent testCard={testCard} key={"testcard-1-" + testCard.id} />
                         ))}
                     </div>
 
@@ -167,7 +169,7 @@ const HomeComponent = () => {
                     {/* Data Analysis cars 1-2 */}
                     <div className="w-full grid grid-rows-1 lg:grid-cols-2 grid-cols-1 gap-7">
                         {lockedTestCards.map((testCard) => (
-                            <TestCardComponent testCard={testCard} key={"testcard-" + testCard.id} />
+                            <TestCardComponent testCard={testCard} key={"testcard-2-" + testCard.id} />
                         ))}
                     </div>
 
@@ -176,7 +178,7 @@ const HomeComponent = () => {
                     {/* Data Analysis cars 1-2 */}
                     <div className="w-full grid grid-rows-1 lg:grid-cols-2 grid-cols-1 gap-7">
                         {testCards.map((testCard) => (
-                            <TestCardComponent testCard={testCard} key={"testcard-" + testCard.id} />
+                            <TestCardComponent testCard={testCard} key={"testcard-3-" + testCard.id} />
                         ))}
                     </div>
 
@@ -185,7 +187,7 @@ const HomeComponent = () => {
                     {/* Data Analysis cars 1-2 */}
                     <div className="w-full grid grid-rows-1 lg:grid-cols-2 grid-cols-1 gap-7">
                         {lockedTestCards.map((testCard) => (
-                            <TestCardComponent testCard={testCard} key={"testcard-" + testCard.id} />
+                            <TestCardComponent testCard={testCard} key={"testcard-4-" + testCard.id} />
                         ))}
                     </div>
 
