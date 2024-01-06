@@ -106,29 +106,29 @@ const HomeComponent = () => {
                 {/* content */}
                 <div className="flex flex-row flex-wrap gap-y-4 mt-7">
                     {/* notes card */}
-                    <div className="flex w-full xl:w-2/3 sm:min-w-[35rem] max-h-72 flex-col justify-around items-center p-6 
+                    <div className="flex w-full xl:w-2/3 sm:min-w-[35rem] md:max-h-72 flex-col justify-around items-center p-6 
                     rounded-xl bg-gradient-to-b from-customColors-orangeBg via-transparent to-[rgba(255,123,93,0.40)]
                     hover:shadow-lg transition duration-300 ease-in-out relative">
 
-                        <a href='/notes'>
+                        <a href='/notes' className='h-full pb-5'>
 
                             {/* title */}
                             <p className="text-orangeText uppercase text-2xl font-medium text-center">Notes: Data Analysis</p>
                             {/* card content */}
-                            <div className="flex flex-row w-full px-6 gap-6 h-full">
+                            <div className="flex md:flex-row flex-col w-full px-6 gap-6 h-full">
 
-                                <div className="flex gap-3">
-                                    <div className="bg-[#FFBCAD] w-auto h-auto md:w-32 md:h-44 flex items-center justify-center rounded-3xl">
+                                <div className="flex gap-3 mt-3">
+                                    <div className="bg-[#FFBCAD] w-full h-min py-7 md:w-32 flex items-center justify-center rounded-3xl">
                                         <Image src="/images/dataAnalysis.png" width={"100%"} height={"100%"} />
                                     </div>
                                 </div>
 
                                 <p className="text-left text-[#262626] text-lg font-normal poppins w-full h-full overflow-y-hidden"
-
                                 >
 
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, voluptas.
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quis autem molestiae iste sint nemo maxime, labore error quod eligendi praesentium beatae aperiam vel architecto quae fugiat adipisci. Ea, dicta.
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quis autem molestiae iste sint nemo maxime, labore error quod eligendi praesentium beatae aperiam vel architecto quae fugiat adipisci. Ea, dicta.
                                 </p>
                             </div>
