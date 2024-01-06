@@ -1,12 +1,11 @@
 
 import React from 'react'
-import { TestCard } from './home';
 import { motion } from 'framer-motion';
 import { FaChevronRight } from 'react-icons/fa';
+import { TestCard } from 'src/types/types';
 
 type Props = {
     testCard: TestCard;
-
 }
 
 const InfoBlock = ({ value, label }: { value: any; label: string }) => (
