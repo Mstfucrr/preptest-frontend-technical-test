@@ -95,7 +95,7 @@ const TestCardComponent = ({ testCard }: Props) => {
                         </div>
                     </div>
 
-                    {/* button */}
+                    {/* Start Now button */}
                     <motion.button className="bg-[#6FB2B8] p-3 backdrop-blur-[1px] w-48 text-white rounded-3xl mt-3
                         flex justify-center items-center gap-2"
                         whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}

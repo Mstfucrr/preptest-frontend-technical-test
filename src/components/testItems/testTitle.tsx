@@ -7,7 +7,6 @@ type Props = {
 }
 
 const TestTitle = (props: Props) => {
-    //181, 214, 216, 0.25
     return (
 
         <div className={`flex w-full h-[90px] p-6 py-10 ${props.isNonGeneretad ? 'bg-customColors-orangeBg' : 'bg-[rgb(181,214,216,0.25)]'} rounded-2xl items-center relative justify-between`}>
