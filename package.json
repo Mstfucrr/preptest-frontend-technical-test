@@ -47,6 +47,7 @@
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
     "cypress": "^13.6.0",
+    "cypress-plugin-steps": "^1.1.1",
     "eslint": "^8.54.0",
     "eslint-config-next": "^12.3.1",
     "eslint-config-prettier": "^9.0.0",
