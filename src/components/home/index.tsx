@@ -92,7 +92,7 @@ const HomeComponent = () => {
                             </p>
                         </motion.button>
                         <div>
-                            <p className="text-2xl font-semibold leading-normal mr-4 poppins uppercase"> Test </p>
+                            <h1 className="text-2xl font-semibold leading-normal mr-4 poppins uppercase">Test</h1>
                         </div>
                         <motion.button className="flex mr-4 items-center justify-center"
                             whileHover={{ scale: 1.1 }}
