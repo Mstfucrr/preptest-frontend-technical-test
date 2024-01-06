@@ -1,23 +1,22 @@
 import React from 'react'
-import Image from 'next/image'
 import { FaChevronRight } from 'react-icons/fa'
 
 const StatisticCard = () => {
 
     const getStatics = () => {
-        return 75
+        return 59
     }
     // Overall Progress , Overall Success, General Level
     const OverallProgress = () => {
-        return 75
+        return 70
     }
 
     const OverallSuccess = () => {
-        return 75
+        return 85
     }
 
     const GeneralLevel = () => {
-        return 75
+        return 3.4
     }
     return (
         <div className="pl-4 pt-4 w-full lg:w-1/3 h-72 flex">
@@ -39,8 +38,12 @@ const StatisticCard = () => {
                     <div className="flex flex-row gap-3 h-full items-center justify-between">
                         {/* Overall Progress */}
                         <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-transparent w-16 h-16">
-                                <Image src="/statisticBars/OverallProgress.svg" width={120} height={120} />
+                            <div className="bg-transparent z-10 bg-white relative w-16 h-16">
+                                <div className="bg-OverallLayout w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover">
+                                    <img src="/images/statistic/Overall.png" className="w-1/3 h-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        alt='Overall'
+                                    />
+                                </div>
                             </div>
                             <div className="flex items-center flex-col justify-center max-w-28 text-center">
                                 <p> {OverallProgress()}% </p>
@@ -49,9 +52,14 @@ const StatisticCard = () => {
                         </div>
                         {/* Overall Success */}
                         <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-transparent w-16 h-16">
-                                <Image src="/statisticBars/OverallProgress.svg" width={120} height={120} />
+                            <div className="bg-transparent z-10 bg-white relative w-16 h-16">
+                                <div className="bg-OverallSuccessLayout w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover">
+                                    <img src="/images/statistic/OverallSuccess.png" className="w-1/3 h-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        alt='Overall'
+                                    />
+                                </div>
                             </div>
+
                             <div className="flex items-center flex-col justify-center max-w-28 text-center">
                                 <p> {OverallSuccess()}% </p>
                                 <p className="text-[#505254] text-sm">Overall Success</p>
@@ -60,11 +68,15 @@ const StatisticCard = () => {
 
                         {/* General Level */}
                         <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-transparent w-16 h-16">
-                                <Image src="/statisticBars/OverallProgress.svg" width={120} height={120} />
+                            <div className="bg-transparent z-10 bg-white relative w-16 h-16">
+                                <div className="bg-GeneralLevelLayout w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover">
+                                    <img src="/images/statistic/GeneralLevel.png" className="w-1/3 h-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                                        alt='Overall'
+                                    />
+                                </div>
                             </div>
                             <div className="flex items-center flex-col justify-center max-w-28 text-center">
-                                <p> {GeneralLevel()}% </p>
+                                <p> {GeneralLevel()} </p>
                                 <p className="text-[#505254] text-sm">General Level</p>
                             </div>
 
