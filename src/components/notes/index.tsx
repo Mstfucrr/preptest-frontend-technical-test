@@ -9,18 +9,18 @@ import { motion } from 'framer-motion'
 
 const NotesComponent = () => {
     return (
-        <div className="lg:w-4/5 xl:w-3/5 w-full mx-auto flex lg:flex-row items-start h-screen">
+        <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-screen">
             <div className="flex relative w-auto min-h-screen">
-                <div className="lg:flex hidden">
+                <div className="lg:relative absolute lg:top-0 lg:left-0 w-full h-screen z-50">
                     <SideBar />
                 </div>
             </div>
-            <div className="flex w-full flex-col">
+            <div className="flex w-full flex-col px-9 mb-5 max-h-screen overflow-y-auto overflow-x-hidden">
 
                 <TopBar />
 
                 {/* navbar */}
-                <motion.a className="w-full flex items-center ml-5 gap-3 "
+                <motion.a className="w-min flex items-center ml-5 gap-3"
                     whileHover={{ scaleX: 1.01 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.2 }}
