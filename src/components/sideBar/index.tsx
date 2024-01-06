@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { classesIcon, examIcon, staticsIcon, recommandationIcon, calendarIcon } from './icons';
 import { PagesElement } from 'src/types/types';
 
@@ -37,10 +37,7 @@ const SideBar = () => {
 
     // classes, exam module, Statics, Recommandation, Calendar
     return (
-
-
-        <AnimatePresence>
-
+        <>
             <motion.div className="w-64 h-full bg-customColors-lightBg pl-8 relative border-[80_82_84_0.25] border border-solid"
                 animate={{
                     width: isSideBarOpen ? 270 : 0,
@@ -64,10 +61,10 @@ const SideBar = () => {
                     </div>
 
                     {/* dashboard */}
-                    <div className="flex flex-row gap-3 mt-24 ">
+                    <button className="flex flex-row gap-3 mt-24 ">
                         <Image src={'/icons/dashboard.svg'} width={24} height={24} />
                         <p className="text-md font-medium text-customColors-darkTxt">Dashboard</p>
-                    </div>
+                    </button>
 
                     {/* pages */}
 
@@ -79,16 +76,26 @@ const SideBar = () => {
                     {/* pages element */}
                     <div className="flex flex-col gap-7 mt-9">
 
-                        {pagesElement.map((Element) => (
-                            <button key={"page-" + Element.title} className="flex flex-row gap-3  text-primary-600"
+                        {pagesElement.map((Element, index) => (
+                            <motion.button key={"page-" + Element.title} className="flex flex-row gap-3  text-primary-600"
                                 onClick={() =>
                                     setActivePage(Element)}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                initial={{ opacity: 0, x: -100 }}
+                                // animate={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
+                                animate={{
+                                    x: isSideBarOpen ? 0 : -50,
+                                    opacity: isSideBarOpen ? 1 : 0,
+                                    transition: { delay: index * 0.1 }
+                                }}
+
                             >
                                 <Element.Icon fill={activePage.title === Element.title ? '#ec5523' : '#000000DE'} />
 
                                 {/* 0, 0, 0, 0.87 */}
                                 <p className={`text-md font-normal inter ${activePage.title === Element.title ? 'text-primary-600' : 'text-[#262626]'}`}>{Element.title}</p>
-                            </button>
+                            </motion.button>
                         ))}
                     </div>
 
@@ -100,25 +107,25 @@ const SideBar = () => {
                     <div className="flex flex-col gap-y-7 mt-4">
 
                         {/* Message Board */}
-                        <div className="flex flex-row gap-3 ">
+                        <button className="flex flex-row gap-3 ">
                             <Image src={'/icons/message.svg'} width={24} height={24} />
                             <p className="text-sm font-normal poppins text-[#000000DE]">Message Board</p>
-                        </div>
+                        </button>
                         {/* Settings */}
-                        <div className="flex flex-row gap-3">
+                        <button className="flex flex-row gap-3">
                             <Image src={'/icons/settings.svg'} width={24} height={24} />
                             <p className="text-sm font-normal poppins text-[#000000DE]">Settings</p>
-                        </div>
+                        </button>
                         {/* Logout */}
-                        <div className="flex flex-row gap-3">
+                        <button className="flex flex-row gap-3">
                             <Image src={'/icons/logout.svg'} width={24} height={24} />
                             <p className="text-sm font-normal poppins text-[#000000DE]">Logout</p>
-                        </div>
+                        </button>
                         {/* Terms & Conditions */}
-                        <div className="flex flex-row gap-3">
+                        <button className="flex flex-row gap-3">
                             <Image src={'/icons/terms.svg'} width={24} height={24} />
                             <p className="text-sm font-normal poppins text-[#000000DE]">Terms & Conditions</p>
-                        </div>
+                        </button>
                     </div>
 
                 </div>
@@ -143,7 +150,8 @@ const SideBar = () => {
                 </div>
 
             </button>
-        </AnimatePresence>
+        </>
+
     )
 }
 
