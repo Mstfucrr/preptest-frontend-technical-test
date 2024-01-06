@@ -9,13 +9,9 @@ import { motion } from 'framer-motion'
 
 const NotesComponent = () => {
     return (
-        <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-screen">
-            <div className="flex relative w-auto min-h-screen">
-                <div className="lg:relative absolute lg:top-0 lg:left-0 w-full h-screen z-50">
-                    <SideBar />
-                </div>
-            </div>
-            <div className="flex w-full flex-col px-9 mb-5 max-h-screen overflow-y-auto overflow-x-hidden">
+        <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-full">
+            <SideBar />
+            <div className="flex w-full flex-col px-9 mb-5 h-full  ">
 
                 <TopBar />
 
@@ -32,7 +28,7 @@ const NotesComponent = () => {
                 </motion.a>
 
                 {/* note content */}
-                <motion.div className="bg-customColors-orangeBg h-full rounded-3xl w-full m-5 p-11 poppins"
+                <motion.div className="bg-customColors-orangeBg h-full rounded-3xl w-full md:m-5 m-2 md:p-11 p-6 poppins z-10 relative"
                     initial={{ scaleY: 0, height: 0, originY: 0 }}
                     animate={{ scaleY: 1, height: 'auto' }}
                     transition={{ duration: 0.7 }}

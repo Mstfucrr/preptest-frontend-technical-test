@@ -65,14 +65,10 @@ const HomeComponent = () => {
 
 
     return (
-        <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-screen">
-            <div className="flex relative w-auto min-h-screen">
-                <div className="lg:relative absolute lg:top-0 lg:left-0 w-full h-screen z-50">
-                    <SideBar />
-                </div>
-            </div>
+        <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-full">
+            <SideBar />
             {/* main content */}
-            <div className="flex w-full flex-col px-9 mb-5 max-h-screen overflow-y-auto">
+            <div className="flex w-full flex-col px-9 mb-5 h-full">
 
                 {/* topbar */}
                 <TopBar />
