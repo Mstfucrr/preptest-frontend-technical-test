@@ -14,6 +14,7 @@ const StatisticCard = () => {
         const interval = setInterval(() => {
             setStatistics(statistics => getStatics() > statistics ? statistics + 1 : statistics)
         }, 10);
+
         return () => clearInterval(interval);
     }, []);
 
