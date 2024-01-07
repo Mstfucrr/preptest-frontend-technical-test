@@ -87,7 +87,6 @@ const SideBar = () => {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     initial={{ opacity: 0, x: -100 }}
-                                    // animate={{ opacity: 1, x: 0, transition: { delay: index * 0.1 } }}
                                     animate={{
                                         x: isSideBarOpen ? 0 : -50,
                                         opacity: isSideBarOpen ? 1 : 0,
@@ -96,8 +95,6 @@ const SideBar = () => {
 
                                 >
                                     <Element.Icon fill={activePage.title === Element.title ? '#ec5523' : '#000000DE'} />
-
-                                    {/* 0, 0, 0, 0.87 */}
                                     <p className={`text-md font-normal inter ${activePage.title === Element.title ? 'text-primary-600' : 'text-[#262626]'}`}>{Element.title}</p>
                                 </motion.button>
                             ))}
