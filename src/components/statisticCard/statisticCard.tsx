@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
+import StatisticComponent from './statisticComponent'
 
 const StatisticCard = () => {
+
+    const [statistics, setStatistics] = React.useState(0)
 
     const getStatics = () => {
         return 59
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setStatistics(statistics => getStatics() > statistics ? statistics + 1 : statistics)
+        }, 10);
+        return () => clearInterval(interval);
+    }, []);
+
     // Overall Progress , Overall Success, General Level
     const OverallProgress = () => {
         return 70
@@ -18,7 +29,6 @@ const StatisticCard = () => {
     const GeneralLevel = () => {
         return 3.4
     }
-
     return (
         <div className="pl-4 pt-4 w-full lg:w-1/3 h-72 flex">
 
@@ -28,60 +38,23 @@ const StatisticCard = () => {
                     <div className="flex flex-row gap-3 h-full items-center justify-between">
                         <div className="bg-[#FFDFD7] w-3/4 h-2">
                             <div className="h-full rounded-3xl bg-gradient-to-r from-[#FFDDD600] to-[#FA4100]"
-                                style={{ width: `${getStatics()}%` }}>
+                                style={{ width: `${statistics}%` }}>
                             </div>
                         </div>
-                        <p> {getStatics()}% </p>
+                        <p> {statistics}% </p>
                     </div>
                 </div>
                 <div className="bg-white w-full h-full rounded-3xl px-7 py-2 poppins">
                     {/* Overall Progress , Overall Success, General Level */}
                     <div className="flex flex-row gap-3 h-full items-center justify-between">
                         {/* Overall Progress */}
-                        <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-transparent z-10 bg-white relative w-16 h-16">
-                                <div className="bg-OverallLayout w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover">
-                                    <img src="/images/statistic/Overall.png" className="w-1/3 h-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                        alt='Overall'
-                                    />
-                                </div>
-                            </div>
-                            <div className="flex items-center flex-col justify-center max-w-28 text-center">
-                                <p> {OverallProgress()}% </p>
-                                <p className="text-[#505254] text-sm">Overall Progress</p>
-                            </div>
-                        </div>
-                        {/* Overall Success */}
-                        <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-transparent z-10 bg-white relative w-16 h-16">
-                                <div className="bg-OverallSuccessLayout w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover">
-                                    <img src="/images/statistic/OverallSuccess.png" className="w-1/3 h-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                        alt='Overall'
-                                    />
-                                </div>
-                            </div>
+                        <StatisticComponent backgroundClass="OverallLayout" imagePath="Overall.png" value={`${OverallProgress()}%`} label="Overall Progress" />
 
-                            <div className="flex items-center flex-col justify-center max-w-28 text-center">
-                                <p> {OverallSuccess()}% </p>
-                                <p className="text-[#505254] text-sm">Overall Success</p>
-                            </div>
-                        </div>
+                        {/* Overall Success */}
+                        <StatisticComponent backgroundClass="OverallSuccessLayout" imagePath="OverallSuccess.png" value={`${OverallSuccess()}%`} label="Overall Success" />
 
                         {/* General Level */}
-                        <div className="flex flex-col items-center justify-center gap-2">
-                            <div className="bg-transparent z-10 bg-white relative w-16 h-16">
-                                <div className="bg-GeneralLevelLayout w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover">
-                                    <img src="/images/statistic/GeneralLevel.png" className="w-1/3 h-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                                        alt='Overall'
-                                    />
-                                </div>
-                            </div>
-                            <div className="flex items-center flex-col justify-center max-w-28 text-center">
-                                <p> {GeneralLevel()} </p>
-                                <p className="text-[#505254] text-sm">General Level</p>
-                            </div>
-
-                        </div>
+                        <StatisticComponent backgroundClass="GeneralLevelLayout" imagePath="GeneralLevel.png" value={`${GeneralLevel()}`} label="General Level" />
 
                     </div>
                 </div>
