@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion';
-import { classesIcon, examIcon, staticsIcon, recommandationIcon, calendarIcon } from './icons/icons';
+import { ClassesIcon, ExamIcon, StaticsIcon, RecommandationIcon, CalendarIcon } from './icons/icons';
 import { PagesElement } from 'src/types/types';
 import { FaChevronLeft } from 'react-icons/fa';
 
@@ -13,23 +13,23 @@ const SideBar = () => {
     const pagesElement = [
         {
             title: 'Classes',
-            Icon: classesIcon,
+            Icon: ClassesIcon,
         },
         {
             title: 'Exam Module',
-            Icon: examIcon,
+            Icon: ExamIcon,
         },
         {
             title: 'Statics',
-            Icon: staticsIcon,
+            Icon: StaticsIcon,
         },
         {
             title: 'Recommandation',
-            Icon: recommandationIcon,
+            Icon: RecommandationIcon,
         },
         {
             title: 'Calendar',
-            Icon: calendarIcon,
+            Icon: CalendarIcon,
         }
     ] as PagesElement[];
 
