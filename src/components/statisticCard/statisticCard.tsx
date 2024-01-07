@@ -29,6 +29,7 @@ const StatisticCard = () => {
     const GeneralLevel = () => {
         return 3.4
     }
+
     return (
         <div className="pl-4 pt-4 w-full lg:w-1/3 h-72 flex">
 
