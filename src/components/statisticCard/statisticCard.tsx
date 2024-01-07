@@ -50,13 +50,13 @@ const StatisticCard = () => {
                     {/* Overall Progress , Overall Success, General Level */}
                     <div className="flex flex-row gap-3 h-full items-center justify-between">
                         {/* Overall Progress */}
-                        <StatisticComponent backgroundClass="OverallLayout" imagePath="Overall.png" value={`${OverallProgress()}%`} label="Overall Progress" />
+                        <StatisticComponent backgroundClass="bg-OverallLayout" imagePath="Overall.png" value={`${OverallProgress()}%`} label="Overall Progress" />
 
                         {/* Overall Success */}
-                        <StatisticComponent backgroundClass="OverallSuccessLayout" imagePath="OverallSuccess.png" value={`${OverallSuccess()}%`} label="Overall Success" />
+                        <StatisticComponent backgroundClass="bg-OverallSuccessLayout" imagePath="OverallSuccess.png" value={`${OverallSuccess()}%`} label="Overall Success" />
 
                         {/* General Level */}
-                        <StatisticComponent backgroundClass="GeneralLevelLayout" imagePath="GeneralLevel.png" value={`${GeneralLevel()}`} label="General Level" />
+                        <StatisticComponent backgroundClass="bg-GeneralLevelLayout" imagePath="GeneralLevel.png" value={`${GeneralLevel()}`} label="General Level" />
 
                     </div>
                 </div>
