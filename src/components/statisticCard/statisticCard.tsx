@@ -32,10 +32,10 @@ const StatisticCard = () => {
     }
 
     return (
-        <div className="pl-4 pt-4 w-full lg:w-1/3 h-72 flex">
+        <div className="pl-4 pt-4 w-full lg:w-1/3 md:h-72 h-auto flex">
 
-            <div className='flex flex-col gap-6 px-7 justify-around items-center w-full h-full min-w-[20rem] p-6 rounded-xl bg-gradient-to-b from-[#B5D6D8] to-[#FFF2E680]'>
-                <div className="bg-white flex flex-col w-full h-16 rounded-3xl px-7 py-2 poppins font-semibold text-[#505254]">
+            <div className='flex flex-col gap-6 px-7 justify-around items-center w-full h-full lg:min-w-[20rem] p-6 rounded-xl bg-gradient-to-b from-[#B5D6D8] to-[#FFF2E680]'>
+                <div className="bg-white flex flex-col w-full md:h-16 h-auto rounded-3xl px-7 py-2 poppins font-semibold text-[#505254]">
                     <p> Data Analys. Level <FaChevronRight className="inline" /> </p>
                     <div className="flex flex-row gap-3 h-full items-center justify-between">
                         <div className="bg-[#FFDFD7] w-3/4 h-2">
@@ -48,7 +48,7 @@ const StatisticCard = () => {
                 </div>
                 <div className="bg-white w-full h-full rounded-3xl px-7 py-2 poppins">
                     {/* Overall Progress , Overall Success, General Level */}
-                    <div className="flex flex-row gap-3 h-full items-center justify-between">
+                    <div className="flex sm:flex-row flex-col gap-3 h-full items-center justify-between">
                         {/* Overall Progress */}
                         <StatisticComponent backgroundClass="bg-OverallLayout" imagePath="Overall.png" value={`${OverallProgress()}%`} label="Overall Progress" />
 
