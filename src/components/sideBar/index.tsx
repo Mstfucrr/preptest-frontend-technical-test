@@ -42,7 +42,7 @@ const SideBar = () => {
 
             <div className="lg:relative absolute lg:top-0 lg:left-0 w-full h-full z-50">
 
-                <motion.div className="w-64 pb-24 sticky z-20 top-0 h-full bg-customColors-lightBg pl-8 border-[80_82_84_0.25] border border-solid"
+                <motion.div className="w-64 pb-24 sticky z-20 top-0 h-full overflow-y-auto bg-customColors-lightBg pl-8 border-[80_82_84_0.25] border border-solid"
                     animate={{
                         width: isSideBarOpen ? 270 : 0,
                         scaleX: isSideBarOpen ? 1 : 0,
