@@ -68,18 +68,18 @@ const HomeComponent = () => {
         <div className="xl:w-4/5 w-full mx-auto flex lg:flex-row items-start h-full">
             <SideBar />
             {/* main content */}
-            <div className="flex w-full flex-col px-9 mb-5 h-full">
+            <div className="flex w-full flex-col lg:px-9 px-2 mb-5 h-full">
 
                 {/* topbar */}
                 <TopBar />
                 <div className="flex w-full">
-                    <div className="flex w-full h-16 bg-customColors-orangeBg rounded-2xl text-orangeText items-center justify-between">
+                    <div className="flex w-full h-16 gap-20 overflow-x-auto bg-customColors-orangeBg rounded-2xl text-orangeText items-center justify-between">
                         <motion.button className="flex ml-4 items-center justify-center"
                             whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 1 }}
+                            whileTap={{ scale: .95 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Image src={'/icons/arrow-left.svg'} width={16} height={16} />
+                            <img src={'/icons/arrow-left.svg'} alt="arrow-left" />
                             <p className="text-lg font-semibold ml-3 poppins">
                                 Fonksionlar
                             </p>
@@ -89,13 +89,13 @@ const HomeComponent = () => {
                         </div>
                         <motion.button className="flex mr-4 items-center justify-center"
                             whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 1 }}
+                            whileTap={{ scale: .95 }}
                             transition={{ duration: 0.2 }}
                         >
                             <p className="text-lg font-semibold mr-3 poppins">
                                 Polinomlar
                             </p>
-                            <Image src={'/icons/arrow-right.svg'} width={16} height={16} />
+                            <img src={'/icons/arrow-right.svg'} alt="arrow-right" />
                         </motion.button>
                     </div>
                 </div>
